@@ -12,7 +12,11 @@ dataset_paths = {
 	'horse_test': '',
 
 	'afhq_wild_train': '',
-	'afhq_wild_test': ''
+	'afhq_wild_test': '' ,
+	
+	
+  	'style_human_train': '/content/data/train' ,
+ 	'style_human_test': '/content/data/train'
 }
 
 model_paths = {

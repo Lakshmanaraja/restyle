@@ -1,5 +1,5 @@
 dataset_paths = {
-	'ffhq': '',
+	'ffhq': '/content/data/train',
 	'celeba_test': '',
 
 	'cars_train': '',
@@ -29,5 +29,7 @@ model_paths = {
 	'mtcnn_pnet': 'pretrained_models/mtcnn/pnet.npy',
 	'mtcnn_rnet': 'pretrained_models/mtcnn/rnet.npy',
 	'mtcnn_onet': 'pretrained_models/mtcnn/onet.npy',
-	'moco': 'pretrained_models/moco_v2_800ep_pretrain.pt'
+	'moco': 'pretrained_models/moco_v2_800ep_pretrain.pt',
+  'style_human':'/pretrained_models/stylegan_human_v2_1024.pt'
+
 }

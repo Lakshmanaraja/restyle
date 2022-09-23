@@ -16,7 +16,7 @@ dataset_paths = {
 	
 	
   	'style_human_train': '/content/data/train' ,
- 	'style_human_test': '/content/data/train'
+ 	'style_human_test': '/content/data/test'
 }
 
 model_paths = {

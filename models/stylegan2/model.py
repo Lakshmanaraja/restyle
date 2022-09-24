@@ -5,7 +5,8 @@ from torch import nn
 from torch.nn import functional as F
 
 from models.stylegan2.op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
-
+#from .op.fused_act import FusedLeakyReLU, fused_leaky_relu 
+#from .op.upfirdn2d import upfirdn2d 
 
 class PixelNorm(nn.Module):
     def __init__(self):
@@ -291,7 +292,8 @@ class ConstantInput(nn.Module):
     def __init__(self, channel, size=4):
         super().__init__()
 
-        self.input = nn.Parameter(torch.randn(1, channel, size, size))
+        #self.input = nn.Parameter(torch.randn(1, channel, size, size))
+        self.input = nn.Parameter(torch.randn(1, channel, size, size // 2))
 
     def forward(self, input):
         batch = input.shape[0]
@@ -416,8 +418,13 @@ class Generator(nn.Module):
 
         for layer_idx in range(self.num_layers):
             res = (layer_idx + 5) // 2
-            shape = [1, 1, 2 ** res, 2 ** res]
-            self.noises.register_buffer(f'noise_{layer_idx}', torch.randn(*shape))
+            #shape = [1, 1, 2 ** res, 2 ** res]
+           # self.noises.register_buffer(f'noise_{layer_idx}', torch.randn(*shape))
+        
+             shape = [1, 1, 2 ** res, 2 ** res // 2]
+            self.noises.register_buffer(
+                "noise_{}".format(layer_idx), torch.randn(*shape)
+            )
 
         for i in range(3, self.log_size + 1):
             out_channel = self.channels[2 ** i]
@@ -453,7 +460,7 @@ class Generator(nn.Module):
         for i in range(3, self.log_size + 1):
             for _ in range(2):
                 noises.append(torch.randn(1, 1, 2 ** i, 2 ** i // 2, device=device))
-
+    
         return noises
 
     def mean_latent(self, n_latent):

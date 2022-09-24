@@ -1,5 +1,5 @@
 dataset_paths = {
-	'ffhq': '/content/data/train',
+	'ffhq': '',
 	'celeba_test': '',
 
 	'cars_train': '',
@@ -15,7 +15,7 @@ dataset_paths = {
 	'afhq_wild_test': '' ,
 	
 	
-  	'style_human_train': '/content/data/train' ,
+  	'style_human_train': '/content/data/SHHQ-1.0_samples' ,
  	'style_human_test': '/content/data/test'
 }
 

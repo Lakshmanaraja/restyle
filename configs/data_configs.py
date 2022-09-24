@@ -46,7 +46,7 @@ DATASETS = {
 		'test_target_root': dataset_paths['celeba_test']
 	},
 
-  "style_human": {
+  "style_human_encode": {
 		'transforms': transforms_config.EncodeTransforms,
 		'train_source_root': dataset_paths['style_human_train'],
 		'train_target_root': dataset_paths['style_human_train'],

@@ -448,11 +448,11 @@ class Generator(nn.Module):
     def make_noise(self):
         device = self.input.input.device
 
-        noises = [torch.randn(1, 1, 2 ** 2, 2 ** 2, device=device)]
+        noises = [torch.randn(1, 1, 2 ** 2, 2 ** 2 // 2, device=device)]
 
         for i in range(3, self.log_size + 1):
             for _ in range(2):
-                noises.append(torch.randn(1, 1, 2 ** i, 2 ** i, device=device))
+                noises.append(torch.randn(1, 1, 2 ** i, 2 ** i // 2, device=device))
 
         return noises
 

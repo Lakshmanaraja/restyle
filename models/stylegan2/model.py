@@ -421,7 +421,7 @@ class Generator(nn.Module):
             #shape = [1, 1, 2 ** res, 2 ** res]
            # self.noises.register_buffer(f'noise_{layer_idx}', torch.randn(*shape))
         
-             shape = [1, 1, 2 ** res, 2 ** res // 2]
+            shape = [1, 1, 2 ** res, 2 ** res // 2]
             self.noises.register_buffer(
                 "noise_{}".format(layer_idx), torch.randn(*shape)
             )

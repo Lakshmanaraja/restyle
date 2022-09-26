@@ -66,7 +66,7 @@ class TrainOptions:
                                  help='Interval for logging metrics to tensorboard')
         self.parser.add_argument('--val_interval', default=1000, type=int,
                                  help='Validation interval')
-        self.parser.add_argument('--save_interval', default=None, type=int,
+        self.parser.add_argument('--save_interval', default=6000, type=int,
                                  help='Model checkpoint interval')
 
         # arguments for iterative encoding

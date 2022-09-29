@@ -15,8 +15,8 @@ dataset_paths = {
 	'afhq_wild_test': '' ,
 	
 	
-  	'style_human_train': '/content/data/train' ,
- 	'style_human_test': '/content/data/test'
+  	'style_human_train': '/content/data/Train Images' ,
+ 	'style_human_test': '/content/data/Test Images'
 }
 
 model_paths = {

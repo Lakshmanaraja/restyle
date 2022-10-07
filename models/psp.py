@@ -8,7 +8,7 @@ from torch import nn
 from models.stylegan2.model import Generator
 from configs.paths_config import model_paths
 from models.encoders import fpn_encoders, restyle_psp_encoders
-from utils.model_utils import RESNET_MAPPING
+from restyle.utils.model_utils import RESNET_MAPPING
 
 
 class pSp(nn.Module):
